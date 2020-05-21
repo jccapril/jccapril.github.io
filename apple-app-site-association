@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "YVJ758W664.jiuquan.app.chen",
+                "paths": [ "/wxshare/*"]
+            }
+        ]
+    }
+}
