@@ -22,6 +22,7 @@ $(function () {
       toast('请先下载悦聚')
       return
     }
+    new ClipboardJS('.action-btn')
     window.location.href = scheme
   })
 })
