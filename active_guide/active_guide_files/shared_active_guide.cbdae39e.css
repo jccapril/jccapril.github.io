@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "PingFang-SC-Medium", "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 375px;
+  height: 100%;
+  background-color: #f5f5f5;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.download-wrapper {
+  margin: 20px 24px;
+  padding: 24px;
+  width: 327px;
+  height: 260px;
+  background-color: #FFFFFF;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.download-wrapper .title {
+  font-size: 18px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  color: #3a3a3a;
+  margin-bottom: 16px;
+  font-family: PingFangSC-Semibold;
+}
+
+.download-wrapper .info {
+  text-align: left;
+  padding: 12px 24px;
+  background-color: #fafafa;
+  margin-bottom: 32px;
+}
+.download-wrapper .app-icon {
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  background: #FFFFFF;
+  border: 0.5px solid #DDDDDD;
+  border-radius: 10px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.download-wrapper .app-icon img {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  margin-top: 1px;
+  margin-left: 1px;
+}
+
+.info-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.info-text  .title {
+  font-size: 14px;
+  height: 24px;
+  line-height: 24px;
+  margin-bottom: 4px;
+  text-align: left;
+  font-family: PingFangSC-Semibold;
+}
+
+.info-text  .desc {
+  font-size: 12px;
+  height: 20px;
+  line-height: 20px;
+  color: #aaaaaa;
+  text-align: left;
+  font-family: PingFangSC-Regular;
+}
+
+.btn-download {
+  position: relative;
+  margin: 8px auto 0;
+  color: #fff;
+  background-color: rgb(247, 89, 70);
+  width: 219px;
+  height: 48px;
+  text-align: center;
+  line-height: 48px;
+  border-radius: 24px;
+  font-size: 16px;
+  box-shadow: 0 1px 4px 0 rgba(247, 89, 70, 0.5);
+  font-family: PingFangSC-Semibold;
+}
+
+.btn-download:active {
+  background-color: #D53926;
+}
+
+.active-guide {
+  margin: 0 24px;
+  width: 327px;
+  background-color: #fffaeb;
+  border-radius: 8px;
+  padding-top: 16px;
+}
+
+.active-guide .title {
+  text-align: left;
+  color: #d1660a;
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
+  margin-left: 20px;
+  margin-bottom: 8px;
+  font-family: PingFangSC-Semibold;
+}
+
+.active-guide .desc {
+  text-align: left;
+  margin: 0 22px 18px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #3a3a3a;
+  font-family: PingFangSC-Regular;
+}
+
+.active-guide .desc span {
+  color: #d1660a;
+}
+
+.active-guide .active-action {
+  text-align: left;
+  height: 116px;
+  padding-left: 20px;
+}
+
+.active-guide .example {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 7px;
+}
+
+.active-guide .example img {
+  width: 186px;
+  height: 116px;
+  margin-right: 4px;
+}
+
+.active-guide .action-btn {
+  display: inline-block;
+  width: 90px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 20px;
+  border: solid 0.5px rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  vertical-align: middle;
+  color: #3a3a3a;
+  opacity: 0.5;
+  font-family: PingFangSC-Semibold;
+}
+
+.active-guide .action-btn.no-disable {
+  opacity: 1;
+}
+
+.active-guide .action-btn:active {
+  border: none;
+}
+
+/*toast*/
+.message {
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 9999;
+}
+ .message span{
+  color: #fff;
+  background: #000;
+  border-radius: 4px;
+  padding: 15px 20px;
+  font-size: 14px;
+  font-family: PingFangSC-Semibold;
+}
