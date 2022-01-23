@@ -34,9 +34,7 @@ $(function () {
     }
     new ClipboardJS('.btn-download')
     setTimeout(function () {
-      window.location.href = appendUrlParams($('.btn-download')[0].getAttribute('download-url'), {
-        'return_url': encodeURIComponent(window.location.href)
-      })
+      window.location.href = appendUrlParams($('.btn-download')[0].getAttribute('download-url'))
     })
 
   })
