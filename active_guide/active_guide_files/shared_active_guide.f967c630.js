@@ -23,7 +23,9 @@ $(function () {
       return
     }
     new ClipboardJS('.action-btn')
-    window.location.href = scheme
+    setTimeout(function () {
+      window.location.href = scheme
+    })
   })
 })
 
