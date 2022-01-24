@@ -22,10 +22,8 @@ $(function () {
       toast('请先下载悦聚')
       return
     }
-    new ClipboardJS('.action-btn')
-    setTimeout(function () {
-      window.location.href = scheme
-    })
+    window.location.href = scheme
+
   })
 })
 
