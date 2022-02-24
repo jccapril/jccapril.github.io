@@ -1,23 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" style="font-size: 50px;">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+    <meta id="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="apple-themes-web-app-capable" content="yes">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="format-detection" content="telephone=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>微信分享</title>
-    <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?2daaababe332839a22e6e555acb6c051";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-    </script>
-    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
+    <title>韭圈儿APP下载</title>
+    <link rel="stylesheet" href="https://app.jiucaishuo.com/html/static/css/main.css?v=20211122" />
+
+
+    <style>
+    .main { background: url('https://app.jiucaishuo.com/html/static/img/down.png') no-repeat 100% 100%; background-position: 0 0; background-size: 100% 100%; position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
+        .down { position: absolute; width: 100%; height: 1rem; line-height: 1rem; bottom: 1rem; font-size: .3rem; text-align: center; display: flex; }
+        .down > span { flex: 1; }
+        .down > span > span { display: inline-block; width: 80%; margin: 0 auto; background-color: #fff; color: #f5222d; border-radius: 1rem; }
+        .mask-h5share { position: absolute; right: .3rem; top: .3rem; background-color: #fff; width: 3.28rem; height: 1.90rem; border-radius: .10rem; box-sizing: border-box; padding: .30rem; }
+        .mask-h5share .p1 { text-align: center; color: #262626; font-size: .28rem; }
+        .mask-h5share .s1 { z-index: 9998; }
+        .mask-h5share .s1::after { transform: rotate(150deg); content: ''; width: 0; height: 0; border: .2rem solid; position: absolute; top: -.1rem; right: .06rem; border-color: transparent transparent #fff transparent; }
+    </style>
 </head>
 <body>
-    微信分享
+    <div class="main">
+        <div class="down">
+            <span class="s1 android"><span>安卓下载</span></span>
+            <span class="s2 ios"><span>苹果下载</span></span>
+        </div>
+        <div class="mask hide">
+            <div class="mask-h5share">
+                <span class="s1"></span>
+                <p class="p1">请点击右上角</p>
+                <p class="p1">用默认浏览器打开</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://app.jiucaishuo.com/html/static/js/jquery.min.js"></script>
+    <script src="https://app.jiucaishuo.com/html/static/js/wxsdk.js"></script>
+
+    <script src="https://app.jiucaishuo.com/html/static/js/uni.webview.1.5.2.js"></script>
+    <script src="https://app.jiucaishuo.com/html/static/js/fed.min.js?v=20211122"></script>
+    <script type="text/javascript">
+        _fed.loadSet(function () {
+            if (_fed.data.type == "h5_wx") {
+                var share = {
+                    title: "韭圈儿APP下载",
+                    desc: "韭圈儿App | 工具集",
+                    imgUrl: location.origin + "/static/img/logo.png",
+                    success: function (res) {
+                        // 分享后的一些操作,比如分享统计等等
+                        //console.log("分享成功", Math.random());
+                    },
+                    cancel: function (res) {
+                    }
+                };
+                _fed.wx_share(share);
+            }
+
+        });
+        $(function () {
+            $(".android").click(function () {
+                var user_agent = navigator.userAgent.toLowerCase();
+                //if (user_agent.indexOf("micromessenger") > -1) {
+                //    $(".mask").removeClass("hide");
+                //    return;
+                //}
+                //location.href = _fed.config.andr_url;
+
+                location.href = _fed.config.yyb_url;
+                return !1;
+            });
+            $(".ios").click(function () {
+                location.href = _fed.config.ios_url;
+                return !1;
+            });
+
+            $(".down").click(function () {
+                return;
+                //console.log(_fed.data.type);
+                if (_fed.data.type == "h5_wx") {
+                    //微信
+                    var user_agent = navigator.userAgent.toLowerCase();
+                    if (user_agent.indexOf("iphone") > -1 || user_agent.indexOf("ipad") > -1) {
+                        //苹果
+                        location.href = _fed.config.ios_url;
+                    } else {
+                        $(".mask").removeClass("hide");
+                    }
+
+                } else if (_fed.data.type == "h5_android") {
+                    //安卓
+                    location.href = _fed.config.yyb_url;
+
+                } else if (_fed.data.type == "h5_ios") {
+                    //ios
+                    location.href = _fed.config.ios_url;
+                }
+            });
+            $(".mask").click(function () {
+                $(".mask").addClass("hide");
+            })
+        });
+    </script>
+
 </body>
 </html>
