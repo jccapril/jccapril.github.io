@@ -1,11 +1,15 @@
 {
-    "applinks": {
-        "apps": [],
-        "details": [
-            {
-                "appID": "B5PM7BPCRG.jiuquaner.app.chen",
-                "paths": [ "/wxshare/*"]
-            }
-        ]
-    }
+  "applinks": {
+      "details": [
+           {
+             "appIDs": [ "CB4RNFNSCQ.top.hzb.daedalus", "B5PM7BPCRG.jiuquaner.app.chen"],
+             "components": [
+               {
+                  "/": "/wxshare/*",
+                  "comment": "Matches any URL with a path that starts with /wxshare/."
+               }
+             ]
+           }
+       ]
+   }
 }
