@@ -7,6 +7,10 @@
                {
                   "/": "/wxshare/*",
                   "comment": "Matches any URL with a path that starts with /wxshare/."
+               },
+               {
+                  "/": "/wxopen/*",
+                  "comment": "Matches any URL with a path that starts with /wxshare/."
                }
              ]
            }
