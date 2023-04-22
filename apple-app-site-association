@@ -6,10 +6,12 @@
              "components": [
                {
                   "/": "/wxshare/*",
+                  "exclude": true,
                   "comment": "Matches any URL with a path that starts with /wxshare/."
                },
                {
                   "/": "/wxopen/*",
+                  "exclude": true,
                   "comment": "Matches any URL with a path that starts with /wxshare/."
                }
              ]
