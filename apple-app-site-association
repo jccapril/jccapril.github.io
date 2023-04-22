@@ -1,21 +1,16 @@
 {
-  "applinks": {
-      "details": [
-           {
-             "appIDs": [ "CB4RNFNSCQ.top.hzb.daedalus", "B5PM7BPCRG.jiuquaner.app.chen"],
-             "components": [
-               {
-                  "/": "/wxshare/*",
-                  "exclude": true,
-                  "comment": "Matches any URL with a path that starts with /wxshare/."
-               },
-               {
-                  "/": "/wxopen/*",
-                  "exclude": true,
-                  "comment": "Matches any URL with a path that starts with /wxshare/."
-               }
-             ]
-           }
-       ]
-   }
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "CB4RNFNSCQ.top.hzb.daedalus",
+                "paths": [ "/wxopen/*" ]
+            },
+            {
+                "appID": "B5PM7BPCRG.jiuquaner.app.chen",
+                "paths": [ "/wxshare/*" ]
+            }
+        ]
+    }
 }
+
