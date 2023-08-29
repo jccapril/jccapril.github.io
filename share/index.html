@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幻想家</title>
+
+</head>
+
+<body class="app">
+
+    <div class="content">
+
+        <img class="appIcon" src="assets/appIcon.png" alt="">
+
+        <img class="logo" src="assets/logo.png" alt="">
+
+        <img class="slogan" src="assets/slogan.png" alt="">
+
+        <img class="button" onclick="download()" src="assets/download.png" alt="">
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    // 判断是安卓还是iOS
+    function judgeDevice() {
+        var userAgent = navigator.userAgent.toLowerCase();
+
+        if (/(android)/i.test(userAgent)) {
+            return "android";
+        } else if (/(iphone|ipad|ipod|ios)/i.test(userAgent)) {
+            return "iOS";
+        } else {
+            return "unknown";
+        }
+    }
+
+    function download() {
+        // 调用函数判断设备类型
+        var device = judgeDevice();
+        console.log(device);
+        if (device == "android") {
+            window.location = "https://cdn.djangoc.com/apk/app-release.apk"
+        } else if (device == "iOS") {
+            window.location = "https://apps.apple.com/cn/app/id6456887144"
+        } else {
+            console.log("unknown")
+        }
+    }
+</script>
+
+<style>
+    html,
+    body {
+        width: 100%;
+    }
+    
+    .app {
+        background: url("assets/bg.png") center center fixed;
+        background-size: cover;
+        width: 100%;
+    }
+    
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .appIcon {
+        margin: 10px 0 0 10px;
+        width: 100px;
+    }
+    
+    .logo {
+        margin: 20px auto 80px;
+        width: 60%;
+    }
+    
+    .slogan {
+        margin: 0 auto 20px;
+        width: 100%;
+    }
+    
+    .button {
+        margin: 80px auto 0;
+        width: 33%;
+    }
+</style>
