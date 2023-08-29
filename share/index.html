@@ -46,9 +46,9 @@
         var device = judgeDevice();
         console.log(device);
         if (device == "android") {
-            window.location = "https://cdn.djangoc.com/apk/app-release.apk"
+            window.open("https://cdn.djangoc.com/apk/app-release.apk")
         } else if (device == "iOS") {
-            window.location = "https://apps.apple.com/cn/app/id6456887144"
+            window.open("https://apps.apple.com/cn/app/id6456887144")
         } else {
             console.log("unknown")
         }
