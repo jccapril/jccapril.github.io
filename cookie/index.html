@@ -13,10 +13,26 @@
             document.cookie = cookieName + "=" + cookieValue + "; expires=" + expires.toUTCString() + "; path=/";
             alert("Cookie 设置成功！");
         }
+
+        function testCookie() {
+            var message = {};
+            message["cookie"] = "测试";
+            message["url"] = document.location.href;
+            if (webkit && webkit.messageHandlers &&
+                webkit.messageHandlers.JDCache &&
+                webkit.messageHandlers.JDCache.postMessage) {
+                    webkit.messageHandlers.JDCache.postMessage({
+                        method: "syncCookie",
+                        params: message
+                    })
+            }
+        }
+
     </script>
 </head>
 <body>
     <h1>点击按钮设置 Cookie</h1>
     <button onclick="setCookie()">设置 Cookie</button>
+    <button onclick="testCookie()">测试 </button>
 </body>
 </html>
