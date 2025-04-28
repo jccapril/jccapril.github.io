@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置 Cookie 示例</title>
+    <script>
+        function setCookie() {
+            var cookieName = "user";
+            var cookieValue = "MTIConstants";
+            var expires = new Date();
+            expires.setMinutes(expires.getMinutes() + 5); // 设置 cookie 有效期为 5 分钟
+            document.cookie = cookieName + "=" + cookieValue + "; expires=" + expires.toUTCString() + "; path=/";
+            alert("Cookie 设置成功！");
+        }
+    </script>
+</head>
+<body>
+    <h1>点击按钮设置 Cookie</h1>
+    <button onclick="setCookie()">设置 Cookie</button>
+</body>
+</html>
