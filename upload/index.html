@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>上传文件到OSS</title>
+</head>
+<body>
+  <div class="container">
+    <form>
+      <div class="mb-3">
+        <label for="file" class="form-label">选择文件</label>
+        <input type="file" class="form-control" id="file" name="file" required>
+      </div>
+      <button type="submit" class="btn btn-primary">上传</button>
+    </form>
+  </div>
+  <script type="text/javascript">
+      const form = document.querySelector('form');
+      const fileInput = document.querySelector('#file');
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append('key','video/2025/05/29/37139554/0132098b-6430-4085-b03b-5afae0bc85a7.mp4');
+        formData.append('policy', 'eyJleHBpcmF0aW9uIjoiMjAyNS0wNS0yOVQwODoyODo0Ny4wMDBaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA3Mzc0MTgyNF0sWyJlcSIsIiRrZXkiLCJ2aWRlb1wvMjAyNVwvMDVcLzI5XC8zNzEzOTU1NFwvMDEzMjA5OGItNjQzMC00MDg1LWIwM2ItNWFmYWUwYmM4NWE3Lm1wNCJdLFsiZXEiLCIkeC1vc3MtZm9yYmlkLW92ZXJ3cml0ZSIsInRydWUiXSx7Ingtb3NzLWNvbnRlbnQtdHlwZSI6InZpZGVvXC9tcDQifV19');
+        formData.append('ossAccessKeyId', 'LTAI5tPmVpqPVdEXWfwfGuzY');
+        formData.append('success_action_status', '200');
+        formData.append('signature', 'FHxlxWM1lIANv+z6GUt2acBibyk=');
+        formData.append('x-oss-forbid-overwrite', 'true');  
+        formData.append('x-oss-content-type', 'video/mp4');
+            // file必须为最后一个表单域，除file以外的其他表单域无顺序要求。
+        formData.append('file', file);
+        fetch(data.host, { method: 'POST', body: formData},).then((res) => {
+            console.log(res);
+            alert('文件已上传');
+        });
+      });
+  </script>
+</body>
+</html>
