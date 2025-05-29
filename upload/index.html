@@ -30,7 +30,7 @@
         formData.append('x-oss-content-type', 'video/mp4');
             // file必须为最后一个表单域，除file以外的其他表单域无顺序要求。
         formData.append('file', file);
-        fetch(data.host, { method: 'POST', body: formData},).then((res) => {
+        fetch('https://static.pp-static.com/', { method: 'POST', body: formData},).then((res) => {
             console.log(res);
             alert('文件已上传');
         });
